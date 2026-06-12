@@ -10,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!form) return;
 
-  // TODO: Replace with your deployed Google Apps Script URL
-  const APPS_SCRIPT_URL = '';
+  const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzBCV_N0njWkj0tCw98frXm1TnaY9GI1OVFkwY4QMMB3gvjnKN0Z4cUl-t76-aSVEQsKA/exec';
 
   // Validation rules
   const rules = {
