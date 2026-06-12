@@ -3,14 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Polygentic, Inc. — Software and systems development." />
+  <meta name="description" content="Polygentic, Inc. — Application development for highly regulated industries." />
   <title>Polygentic</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
-    <img src="polygentic-logo-black.svg" alt="Polygentic, Inc." class="logo" />
-    <p class="subtext">Software and systems development</p>
+    <section class="hero">
+      <img src="polygentic-logo-black.svg" alt="Polygentic, Inc." class="logo" />
+      <p class="tagline">Application development for highly regulated industries.</p>
+    </section>
+
+    <section class="contact">
+      <h2 class="section-label">Get in touch</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-field">
+          <input type="text" name="name" placeholder="Name" required />
+          <span class="form-error"></span>
+        </div>
+        <div class="form-field">
+          <input type="email" name="email" placeholder="Email" required />
+          <span class="form-error"></span>
+        </div>
+        <div class="form-field">
+          <textarea name="message" placeholder="Message" rows="4" required></textarea>
+          <span class="form-error"></span>
+        </div>
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+      <div id="confirmation" hidden>
+        <p class="confirmation-text">Message sent. We'll be in touch.</p>
+      </div>
+      <div id="form-error" hidden>
+        <p class="error-text">Something went wrong. Please try again.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
