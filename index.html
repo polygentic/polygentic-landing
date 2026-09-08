@@ -3,46 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Polygentic, Inc. — Systems development for highly regulated industries." />
-  <title>Polygentic</title>
+  <meta name="description" content="Polygentic, Inc. builds AI applications: production software, powered by large language models, for businesses where getting it wrong is not an option." />
+  <title>Polygentic — We build AI applications</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <img src="polygentic-logo-black.svg" alt="Polygentic, Inc." class="logo" />
-      <p class="tagline">Systems development for highly regulated industries.</p>
+  <header class="nav">
+    <a href="#top" class="wordmark" aria-label="Polygentic, Inc.">
+      <span class="wordmark-name">POLYGENTIC</span>
+      <span class="wordmark-inc">INC.</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#contact" class="button button-small">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="slide slide-hero">
+      <span class="slide-label">01 — What we do</span>
+      <h1 class="display">We build AI applications.</h1>
+      <div class="hero-row">
+        <p class="lede">Production software, powered by large language models, for businesses where getting it wrong is not an option.</p>
+        <a href="#contact" class="text-link">Talk to us
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
     </section>
 
-    <section class="contact">
-      <h2 class="section-label">Get in touch</h2>
-      <form id="contact-form" novalidate>
-        <div class="form-field">
-          <input type="text" name="name" placeholder="Name" required />
-          <span class="form-error"></span>
-        </div>
-        <div class="form-field">
-          <input type="email" name="email" placeholder="Email" required />
-          <span class="form-error"></span>
-        </div>
-        <div class="form-field">
-          <textarea name="message" placeholder="Message" rows="4" required></textarea>
-          <span class="form-error"></span>
-        </div>
-        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-        <button type="submit">Send</button>
-      </form>
-      <div id="confirmation" hidden>
-        <p class="confirmation-text">Message sent. We'll be in touch.</p>
+    <section class="slide">
+      <span class="slide-label">02 — Why</span>
+      <h2 class="headline">Most AI demos never make it to production. Ours do.</h2>
+      <p class="lede">We have shipped in industries where compliance, identity and audit trails come first, and the model comes second.</p>
+    </section>
+
+    <section class="slide" id="work">
+      <div class="slide-head">
+        <span class="slide-label">03 — How</span>
+        <h2 class="headline">Three things, done end to end.</h2>
       </div>
-      <div id="form-error" hidden>
-        <p class="error-text">Something went wrong. Please try again.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-index">1</span>
+          <h3>Design</h3>
+          <p>Find the workflow where a model earns its keep. Prove it in weeks, not quarters.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-index">2</span>
+          <h3>Build</h3>
+          <p>Agents, retrieval, evaluation and the boring parts: auth, audit, mobile, cloud.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-index">3</span>
+          <h3>Operate</h3>
+          <p>Monitor, measure and improve it in production. We stay until it runs itself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide-contact" id="contact">
+      <div class="contact-intro">
+        <div class="slide-head">
+          <span class="slide-label">04 — Contact</span>
+          <h2 class="headline">Tell us what you want to build.</h2>
+        </div>
+        <address class="address">
+          <span class="slide-label">Polygentic, Inc.</span>
+          <p>3400 Cottage Way, Ste G2 #29467<br />Sacramento, CA 95825</p>
+        </address>
+      </div>
+
+      <div class="contact-form">
+        <form id="contact-form" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="A few sentences is plenty." rows="4" required></textarea>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-actions">
+            <button type="submit" class="button">Send message</button>
+            <span class="form-note">We reply within one business day.</span>
+          </div>
+        </form>
+        <div id="confirmation" hidden>
+          <p class="confirmation-text">Message sent. We'll be in touch.</p>
+        </div>
+        <div id="form-error" hidden>
+          <p class="error-text">Something went wrong. Please try again.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Polygentic, Inc.</p>
+  <footer class="footer">
+    <span>&copy; <span id="year"></span> Polygentic, Inc.</span>
+    <span>Sacramento, California</span>
   </footer>
 
   <script src="script.js"></script>
