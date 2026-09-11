@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'none'; base-uri 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="Polygentic, Inc. builds AI applications: production software, powered by large language models, for businesses where getting it wrong is not an option." />
   <title>Polygentic — We build AI applications</title>
+  <link rel="canonical" href="https://polygentic.com/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Polygentic" />
+  <meta property="og:title" content="Polygentic — We build AI applications" />
+  <meta property="og:description" content="Production software, powered by large language models, for businesses where getting it wrong is not an option." />
+  <meta property="og:url" content="https://polygentic.com/" />
+  <meta property="og:image" content="https://polygentic.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Polygentic: We build AI applications." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Polygentic — We build AI applications" />
+  <meta name="twitter:description" content="Production software, powered by large language models, for businesses where getting it wrong is not an option." />
+  <meta name="twitter:image" content="https://polygentic.com/og-image.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -77,17 +94,17 @@
         <form id="contact-form" novalidate>
           <div class="form-field">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            <input type="text" id="name" name="name" placeholder="Your name" required maxlength="100" autocomplete="name" />
             <span class="form-error" aria-live="polite"></span>
           </div>
           <div class="form-field">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+            <input type="email" id="email" name="email" placeholder="you@company.com" required maxlength="254" autocomplete="email" />
             <span class="form-error" aria-live="polite"></span>
           </div>
           <div class="form-field">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="A few sentences is plenty." rows="4" required></textarea>
+            <textarea id="message" name="message" placeholder="A few sentences is plenty." rows="4" required maxlength="2000"></textarea>
             <span class="form-error" aria-live="polite"></span>
           </div>
           <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />

@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Page-load timestamp; the backend rejects submissions made too quickly.
+  const loadedAt = Date.now();
+
   // Copyright year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -72,7 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
       name: form.elements.name.value.trim(),
       email: form.elements.email.value.trim(),
       message: form.elements.message.value.trim(),
-      _gotcha: form.elements._gotcha.value
+      _gotcha: form.elements._gotcha.value,
+      _elapsed: Date.now() - loadedAt
     };
 
     try {
@@ -88,9 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
         form.hidden = true;
         confirmationEl.hidden = false;
       } else {
-        throw new Error(data.message || 'Submission failed');
+        throw new Error(data.message || 'submission_failed');
       }
-    } catch {
+    } catch (err) {
+      const text = errorEl.querySelector('.error-text');
+      if (text) {
+        text.textContent = err && err.message === 'rate_limited'
+          ? 'Too many messages right now. Please try again in a little while.'
+          : 'Something went wrong. Please try again.';
+      }
       errorEl.hidden = false;
       form.classList.remove('form-loading');
       form.querySelector('button').disabled = false;
